@@ -31,13 +31,10 @@ while IFS= read -r project; do
 
     echo "Evaluating $project"
 
-    # Get the response headers of this call endpoint: https://api.github.com/repos/ollama/ollama/commits?sha=main&per_page=1&page=1
-
-
     # Get repository data
     REPO_DATA=$(curl -s -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/repos/$OWNER/$REPO)
     STARS=$(echo $REPO_DATA | jq .stargazers_count)
-    DEFAULT_BRANCH=$(echo $REPO_DATA | jq .default_branch)
+    DEFAULT_BRANCH=$(echo $REPO_DATA | jq -r .default_branch)
     COMMITS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" --head https://api.github.com/repos/$OWNER/$REPO/commits\?sha\=${DEFAULT_BRANCH}\&per_page\=1\&page\=1 | grep -i "Link:" | grep -o '<[^>]*>; rel="last"' | sed 's/.*<\(.*\)>.*/\1/' | sed 's/.*page=\([0-9]*\).*/\1/')
     OPEN_PRS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" --head https://api.github.com/repos/$OWNER/$REPO/pulls?state=open\&per_page\=1\&page\=1 | grep -i "Link:" | grep -o '<[^>]*>; rel="last"' | sed 's/.*<\(.*\)>.*/\1/' | sed 's/.*page=\([0-9]*\).*/\1/')
     OPEN_ISSUES=$(echo $REPO_DATA | jq .open_issues)
