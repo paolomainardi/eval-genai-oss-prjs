@@ -21,7 +21,7 @@ if [ -z "$GITHUB_TOKEN" ]; then
     echo "GITHUB_TOKEN is not set. It is highly reccomended."
 fi
 
-echo -e "Project\tStars\tCommits\tReleases\tOpen PRs\tScorecard Score"
+echo -e "Project\tStars\tCommits\tReleases\tOpen PRs\tScorecard Score\tLicense" > results.txt
 
 SCORECARD_CHECKS="Dangerous-Workflow,Code-Review,CII-Best-Practices,Security-Policy,SAST,Contributors,Signed-Releases,Packaging,Dependency-Update-Tool,CI-Tests,Token-Permissions,Fuzzing,License,Vulnerabilities,Binary-Artifacts,Maintained,Pinned-Dependencies"
 
