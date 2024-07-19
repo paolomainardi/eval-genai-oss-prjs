@@ -30,3 +30,9 @@ jobs:
         run: |
           chmod +x ./evaluate.sh
           ./evaluate.sh projects
+
+      - name: Upload output file
+        uses: actions/upload-artifact@v2
+        with:
+          name: evaluation-output
+          path: results.txt

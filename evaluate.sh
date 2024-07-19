@@ -1,8 +1,9 @@
 #!/bin/bash
 
-# Usage: ./github_data_extractor.sh <projects_file>
-# projects_file should contain lines in the format: owner/repo
+set -e
 
+# Usage: ./evaluate.sh <projects_file>
+# projects_file should contain lines in the format: owner/repo
 if [ "$#" -ne 1 ]; then
     echo "Usage: $0 <projects_file>"
     exit 1
