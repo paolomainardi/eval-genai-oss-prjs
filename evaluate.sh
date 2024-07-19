@@ -29,6 +29,8 @@ while IFS= read -r project; do
     OWNER=$(echo $project | cut -d'/' -f1)
     REPO=$(echo $project | cut -d'/' -f2)
 
+    echo "Evaluating $project"
+
     # Get repository data
     REPO_DATA=$(curl -s -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/repos/$OWNER/$REPO)
     STARS=$(echo $REPO_DATA | jq .stargazers_count)
