@@ -1,0 +1,27 @@
+name: Evaluate Projects
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * *" # Runs at midnight every day
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq curl
+
+      - name: Run evaluation script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          chmod +x ./evaluate.sh
+          ./evaluate.sh projects
