@@ -21,7 +21,7 @@ if [ -z "$GITHUB_TOKEN" ]; then
     echo "GITHUB_TOKEN is not set. It is highly reccomended."
 fi
 
-echo -e "Project\tStars\tCommits\tReleases\tOpen PRs\tScorecard Score\tLicense" > results.txt
+echo -e "Project\tStars\tCommits\tOpen PRs\t\Open Issues\tScorecard Score\tLicense" > results.txt
 
 SCORECARD_CHECKS="Dangerous-Workflow,Code-Review,CII-Best-Practices,Security-Policy,SAST,Contributors,Signed-Releases,Packaging,Dependency-Update-Tool,CI-Tests,Token-Permissions,Fuzzing,License,Vulnerabilities,Binary-Artifacts,Maintained,Pinned-Dependencies"
 
@@ -31,12 +31,15 @@ while IFS= read -r project; do
 
     echo "Evaluating $project"
 
+    # Get the response headers of this call endpoint: https://api.github.com/repos/ollama/ollama/commits?sha=main&per_page=1&page=1
+
+
     # Get repository data
     REPO_DATA=$(curl -s -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/repos/$OWNER/$REPO)
     STARS=$(echo $REPO_DATA | jq .stargazers_count)
-    COMMITS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/repos/$OWNER/$REPO/commits | jq length)
-    RELEASES=$(curl -s -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/repos/$OWNER/$REPO/releases | jq length)
+    COMMITS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" --head https://api.github.com/repos/$OWNER/$REPO/commits\?sha\=main\&per_page\=1\&page\=1 | grep -i "Link:" | grep -o '<[^>]*>; rel="last"' | sed 's/.*<\(.*\)>.*/\1/' | sed 's/.*page=\([0-9]*\).*/\1/')
     OPEN_PRS=$(curl -s -H "Authorization: token $GITHUB_TOKEN" https://api.github.com/repos/$OWNER/$REPO/pulls?state=open | jq length)
+    OPEN_ISSUES=$(echo $REPO_DATA | jq .open_issues)
 
 
     # New API call to fetch license information
@@ -53,7 +56,7 @@ while IFS= read -r project; do
     SCORECARD_SCORE=$(scorecard --repo=https://github.com/$OWNER/$REPO --format=json --checks $SCORECARD_CHECKS | jq '.score')
 
     # Append each line of output to results.txt
-    echo -e "$project\t$STARS\t$COMMITS\t$RELEASES\t$OPEN_PRS\t$SCORECARD_SCORE\t$LICENSE" >> results.txt
+    echo -e "$project\t$STARS\t$COMMITS\t\t$OPEN_PRS\t$OPEN_ISSUES\t$SCORECARD_SCORE\t$LICENSE" >> results.txt
 done < "$PROJECTS_FILE"
 
 column -t -s $'\t' results.txt
