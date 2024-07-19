@@ -19,6 +19,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y jq curl
 
+      - name: Install scorecard
+        run: |
+          curl -sSL https://github.com/ossf/scorecard/releases/download/v4.13.1/scorecard_4.13.1_linux_amd64.tar.gz | tar xz -C /tmp && sudo mv /tmp/./scorecard-linux-amd64 /usr/local/bin/scorecard
+          chmod +x /usr/local/bin/scorecard
+
       - name: Run evaluation script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
