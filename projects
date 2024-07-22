@@ -5,7 +5,13 @@ run-llama/llama_index
 run-llama/LlamaIndexTS
 langchain-ai/langchain
 langchain-ai/langchainjs
+superagent-ai/superagent
+superagent-ai/superagent-py
+superagent-ai/superagent-js
 deepset-ai/haystack
 cheshire-cat-ai/core
 sourcegraph/cody
 continuedev/continue
+comfyanonymous/ComfyUI
+AUTOMATIC1111/stable-diffusion-webui
+microsoft/autogen
