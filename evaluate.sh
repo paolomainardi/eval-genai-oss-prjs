@@ -54,7 +54,7 @@ while IFS= read -r project; do
 
     # Parse and join languages
     LANGUAGES=$(echo $LANGUAGES_DATA | jq -r 'keys | join(",")')
-    MAIN_LANGUAGE=$(echo $LANGUAGES_DATA | jq -r 'keys | .[0]')
+    MAIN_LANGUAGE=$(echo $LANGUAGES_DATA | jq 'to_entries | .[0].key')
 
     # Check if no languages are found
     if [ -z "$LANGUAGES" ]; then
