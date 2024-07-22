@@ -2,7 +2,9 @@ ollama/ollama
 mudler/localai
 janhq/jan
 run-llama/llama_index
+run-llama/LlamaIndexTS
 langchain-ai/langchain
+langchain-ai/langchainjs
 deepset-ai/haystack
 cheshire-cat-ai/core
 sourcegraph/cody
