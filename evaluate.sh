@@ -21,7 +21,7 @@ if [ -z "$GITHUB_TOKEN" ]; then
     echo "GITHUB_TOKEN is not set. It is highly reccomended."
 fi
 
-echo -e "Project\tStars\tCommits\tOpen PRs\tOpen Issues\tScorecard Score\tLanguages\tLicense" > results.txt
+echo -e "Project\tStars\tCommits\tOpen PRs\tOpen Issues\tScorecard Score\tLanguage\tLicense" > results.txt
 
 SCORECARD_CHECKS="Dangerous-Workflow,Code-Review,CII-Best-Practices,Security-Policy,SAST,Contributors,Signed-Releases,Packaging,Dependency-Update-Tool,CI-Tests,Token-Permissions,Fuzzing,License,Vulnerabilities,Binary-Artifacts,Maintained,Pinned-Dependencies"
 
@@ -65,7 +65,7 @@ while IFS= read -r project; do
     SCORECARD_SCORE=$(scorecard --repo=https://github.com/$OWNER/$REPO --format=json --checks $SCORECARD_CHECKS | jq '.score')
 
     # Append each line of output to results.txt
-    echo -e "$project\t$STARS\t$COMMITS\t$OPEN_PRS\t$OPEN_ISSUES\t$SCORECARD_SCORE\t$LANGUAGES\t$LICENSE" >> results.txt
+    echo -e "$project\t$STARS\t$COMMITS\t$OPEN_PRS\t$OPEN_ISSUES\t$SCORECARD_SCORE\t$MAIN_LANGUAGE\t$LICENSE" >> results.txt
 done < "$PROJECTS_FILE"
 
 column -t -s $'\t' results.txt
