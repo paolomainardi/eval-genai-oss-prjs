@@ -16,3 +16,6 @@ comfyanonymous/ComfyUI
 AUTOMATIC1111/stable-diffusion-webui
 microsoft/autogen
 comfyanonymous/ComfyUI
+chroma-core/chroma
+weaviate/weaviate
+pgvector/pgvector
