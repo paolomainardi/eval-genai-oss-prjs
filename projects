@@ -4,6 +4,7 @@ ggerganov/llama.cpp
 vllm-project/vllm
 BlinkDL/RWKV-LM
 AutoGPTQ/AutoGPTQ
+mlc-ai/mlc-llm
 janhq/jan
 vercel/ai
 run-llama/llama_index
