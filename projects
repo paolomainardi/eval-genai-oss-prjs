@@ -1,5 +1,6 @@
 ollama/ollama
 mudler/localai
+nomic-ai/gpt4all
 ggerganov/llama.cpp
 vllm-project/vllm
 BlinkDL/RWKV-LM
