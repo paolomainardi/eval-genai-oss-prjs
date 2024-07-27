@@ -3,6 +3,7 @@ mudler/localai
 nomic-ai/gpt4all
 ggerganov/llama.cpp
 vllm-project/vllm
+NVIDIA/TensorRT-LLM
 BlinkDL/RWKV-LM
 AutoGPTQ/AutoGPTQ
 huggingface/text-generation-inference
