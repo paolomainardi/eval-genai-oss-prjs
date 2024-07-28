@@ -6,6 +6,7 @@ vllm-project/vllm
 NVIDIA/TensorRT-LLM
 BlinkDL/RWKV-LM
 AutoGPTQ/AutoGPTQ
+mistralai/mistral-inference
 huggingface/text-generation-inference
 microsoft/DeepSpeed-MII
 mlc-ai/mlc-llm
