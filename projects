@@ -1,6 +1,7 @@
 ollama/ollama
 mudler/localai
 nomic-ai/gpt4all
+janhq/jan
 ggerganov/llama.cpp
 vllm-project/vllm
 NVIDIA/TensorRT-LLM
@@ -10,7 +11,6 @@ mistralai/mistral-inference
 huggingface/text-generation-inference
 microsoft/DeepSpeed-MII
 mlc-ai/mlc-llm
-janhq/jan
 vercel/ai
 run-llama/llama_index
 run-llama/LlamaIndexTS
@@ -21,11 +21,11 @@ deepset-ai/haystack
 microsoft/semantic-kernel
 spring-projects/spring-ai
 cheshire-cat-ai/core
+microsoft/autogen
 sourcegraph/cody
 continuedev/continue
 comfyanonymous/ComfyUI
 AUTOMATIC1111/stable-diffusion-webui
-microsoft/autogen
 chroma-core/chroma
 weaviate/weaviate
 pgvector/pgvector
