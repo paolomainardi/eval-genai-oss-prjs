@@ -2,6 +2,7 @@ ollama/ollama
 mudler/localai
 nomic-ai/gpt4all
 janhq/jan
+pytorch/torchchat
 ggerganov/llama.cpp
 vllm-project/vllm
 NVIDIA/TensorRT-LLM
