@@ -12,6 +12,7 @@ mistralai/mistral-inference
 huggingface/text-generation-inference
 microsoft/DeepSpeed-MII
 mlc-ai/mlc-llm
+theodo-group/LLPhant
 vercel/ai
 run-llama/llama_index
 run-llama/LlamaIndexTS
