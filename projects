@@ -30,3 +30,5 @@ AUTOMATIC1111/stable-diffusion-webui
 chroma-core/chroma
 weaviate/weaviate
 pgvector/pgvector
+milvus-io/milvus
+qdrant/qdrant
