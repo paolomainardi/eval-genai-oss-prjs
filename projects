@@ -15,9 +15,7 @@ mlc-ai/mlc-llm
 theodo-group/LLPhant
 vercel/ai
 run-llama/llama_index
-run-llama/LlamaIndexTS
 langchain-ai/langchain
-langchain-ai/langchainjs
 superagent-ai/superagent
 deepset-ai/haystack
 microsoft/semantic-kernel
