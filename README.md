@@ -1,4 +1,4 @@
-# GitHub Repository Analyzer
+# Open-source Generative AI GitHub Repository Analyzer
 
 ## Overview
 
