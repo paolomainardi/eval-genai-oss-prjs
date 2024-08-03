@@ -23,8 +23,10 @@ Before running this script, ensure you have the following installed:
 - `scorecard`: A security tool to analyze the security posture of your project.
 
 Additionally, you will need a GitHub Personal Access Token with appropriate permissions set as an environment variable:
+
 ```bash
 export GITHUB_TOKEN='your_github_token_here'
+```
 
 ## Usage
 
