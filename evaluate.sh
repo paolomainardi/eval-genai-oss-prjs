@@ -26,6 +26,9 @@ echo -e "Project\tStars\tCommits\tOpen PRs\tOpen Issues\tScorecard Score\tLangua
 SCORECARD_CHECKS="Dangerous-Workflow,Code-Review,CII-Best-Practices,Security-Policy,SAST,Contributors,Signed-Releases,Packaging,Dependency-Update-Tool,CI-Tests,Token-Permissions,Fuzzing,License,Vulnerabilities,Binary-Artifacts,Maintained,Pinned-Dependencies"
 
 while IFS= read -r project; do
+    # wait a minute for each iteration, to avoid stressing the apis.
+    sleep 60 
+    
     OWNER=$(echo $project | cut -d'/' -f1)
     REPO=$(echo $project | cut -d'/' -f2)
 
