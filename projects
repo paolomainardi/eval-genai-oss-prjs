@@ -31,3 +31,4 @@ weaviate/weaviate
 pgvector/pgvector
 milvus-io/milvus
 qdrant/qdrant
+typesense/typesense
