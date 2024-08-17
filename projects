@@ -14,6 +14,7 @@ huggingface/text-generation-inference
 microsoft/DeepSpeed-MII
 mlc-ai/mlc-llm
 theodo-group/LLPhant
+BerriAI/litellm
 vercel/ai
 run-llama/llama_index
 langchain-ai/langchain
