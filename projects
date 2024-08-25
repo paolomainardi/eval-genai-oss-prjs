@@ -34,3 +34,4 @@ pgvector/pgvector
 milvus-io/milvus
 qdrant/qdrant
 typesense/typesense
+lancedb/lancedb
