@@ -4,6 +4,7 @@ opendevin/opendevin
 nomic-ai/gpt4all
 janhq/jan
 pytorch/torchchat
+Mozilla-Ocho/llamafile
 ggerganov/llama.cpp
 vllm-project/vllm
 NVIDIA/TensorRT-LLM
